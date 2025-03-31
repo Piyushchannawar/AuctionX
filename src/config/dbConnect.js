@@ -1,9 +1,9 @@
 const { Sequelize } = require('sequelize');
 
-require('dotenv').config();
+const config = require('./database.js')[process.env.NODE_ENV || 'development'];
 
-const sequelize = new Sequelize(process.env.DB_NAME , process.env.DB_USER,  process.env.DB_PASSWORD, {
-  host: process.env.DB_HOST,
+const sequelize = new Sequelize(config.database , config.username , config.password, {
+  host:config.host,
   dialect: 'mysql',
   //logging: false, // Disable logging (for production)
 });
