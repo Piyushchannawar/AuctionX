@@ -19,6 +19,10 @@ const Users = sequelize.define(
     last_name: {
       type: DataTypes.STRING
     },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -69,11 +73,11 @@ const Users = sequelize.define(
     createdAt: "created_at",
     updatedAt: "updated_at",
     deletedAt: 'deleted_at',
-    hooks: {
-      beforeCreate:(user)=>{
-        user.updated_at = null // explicity set updated_at to null
-      }
-    }
+    // hooks: {
+    //   beforeCreate:(user)=>{
+    //     user.updated_at = null // explicity set updated_at to null
+    //   }
+    // }
   }
 );
 

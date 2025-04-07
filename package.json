@@ -4,8 +4,8 @@
   "description": "develop branch",
   "main": "index.js",
   "scripts": {
-    "start:dev": "cross-env NODE_ENV=development node app.js",
-    "start:stage": "cross-env NODE_ENV=stage node app.js",
+    "start:dev": "cross-env NODE_ENV=development nodemon app.js",
+    "start:stage": "cross-env NODE_ENV=stage nodemon app.js",
     "start:prod": "cross-env NODE_ENV=production node app.js"
   },
   "repository": {
