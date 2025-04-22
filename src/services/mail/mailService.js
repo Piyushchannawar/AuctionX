@@ -1,5 +1,9 @@
 const nodemailer = require('nodemailer');
+require("dotenv").config({
+    path: `../../../.env.${process.env.NODE_ENV || "development"}`,
+  });
 
+console.log("EMAIL_PASSWORD:", process.env.EMAIL_PASSWORD); // debug log
 
 const sendMail = async (userEmail, mailSubject,content) => {
     // 1. create an email transpoter
@@ -9,7 +13,7 @@ const sendMail = async (userEmail, mailSubject,content) => {
         service: 'gmail',
         auth: {
             user: "channawarpiyush@gmail.com",
-            pass: "lpprchlpsulysild"
+            pass: process.env.EMAIL_PASSWORD,
         }
     });
     // 2. config email content
@@ -33,7 +37,6 @@ const sendMail = async (userEmail, mailSubject,content) => {
     
 };
 
-sendMail('channavarpk@rknec.edu','test mail','this is test mail')
 
 
 module.exports = sendMail;
