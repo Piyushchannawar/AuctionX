@@ -27,7 +27,8 @@
     "express": "^4.21.2",
     "mysql2": "^3.14.0",
     "nodemailer": "^6.10.0",
-    "sequelize": "^6.37.7"
+    "sequelize": "^6.37.7",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.3"

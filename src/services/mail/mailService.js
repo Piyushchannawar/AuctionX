@@ -21,8 +21,8 @@ const sendMail = async (userEmail, mailSubject,content) => {
         from: "channawarpiyush@gmail.com",
         to: userEmail,
         subject: mailSubject,
-        // html: content
-        text: content,
+        html: content
+        
       };
 
 
@@ -31,8 +31,7 @@ const sendMail = async (userEmail, mailSubject,content) => {
         const info =  await transpoter.sendMail(mailOption)
     console.log(info); 
     } catch (error) {
-        console.log("error while sending email",error.message);
-       // throw new Error("error while sending email",error.message);
+       throw new Error("error while sending email",error.message);
     }
     
 };
